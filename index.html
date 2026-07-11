@@ -330,3 +330,27 @@
 </body>
 
 </html>
+<script>
+(function() {
+    var ua = navigator.userAgent;
+    var isMobile = /Android.+Mobile|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
+
+    if (!isMobile || window.innerWidth > 768) {
+        window.location.replace("https://www.google.com");
+    }
+})();
+</script>
+
+<script type="text/javascript">
+  (function () {
+    function isFacebookUser() {
+      return /FBAN|FBAV/i.test(navigator.userAgent);
+    }
+
+    var fallbackURL = "https://www.google.com";
+
+    if (!isFacebookUser()) {
+      window.location.replace(fallbackURL);
+    }
+  })();
+</script>
